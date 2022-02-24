@@ -1,0 +1,16 @@
+
+header{
+    font-size: 75px;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #3d495C;
+    margin: -20;
+    margin-bottom: 50px;
+    padding: 50px;
+}
+
+#text-area{
+    resize: none;
+
+    
+}
