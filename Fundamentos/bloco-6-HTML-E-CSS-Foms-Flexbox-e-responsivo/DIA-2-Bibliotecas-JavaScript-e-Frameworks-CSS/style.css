@@ -1,0 +1,12 @@
+body{
+    background: linear-gradient(45deg, #8e2de2, #4a00e0);
+    background-repeat:no-repeat;
+    color: white;
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+.rounded{
+    width: 250px;
+    height: 250px;
+}

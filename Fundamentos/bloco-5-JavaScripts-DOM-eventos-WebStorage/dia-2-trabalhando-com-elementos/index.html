@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+      section {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+
+      //1
+     let h1Add = document.querySelector("body")
+     let cH1 = document.createElement("h1")
+     cH1.innerHTML = "Exercício 5.2 - JavaScript DOM"
+     h1Add.appendChild(cH1)
+      
+
+      //2
+       let addMain = document.createElement("main")
+       addMain.className = "main-content"
+       document.body.appendChild(addMain)
+      
+
+      //3 
+      let addSectionC = document.createElement("section")
+      addSectionC.className = "center-content"
+      addMain.appendChild(addSectionC)
+
+      //4
+      let addP = document.createElement("p")
+      addP.innerHTML = "Quero dormir"
+      addSectionC.appendChild(addP)
+      
+      //5
+       let addSectionL = document.createElement("section")
+       addSectionL.className = "left-content"
+       addMain.appendChild(addSectionL)
+
+       //6 
+        let addSectionR = document.createElement("section")
+        addSectionR.className = "right-content"
+        addMain.appendChild(addSectionR)
+
+       //7
+       let addImg = document.createElement("img")
+       addImg.className = "small-image"
+       addImg.src = "https://picsum.photos/200"
+       addSectionL.appendChild(addImg)
+
+       //8
+       
+       let addUl = document.createElement("ul")
+       addSectionR.appendChild(addUl)
+       let arrayNum = ["Um", "Dois", "Três", "Quatro", "Cinco", "Seis", "Sete", "Oito","Nove", "Dez"]
+       for (let i in arrayNum){
+         let addLi = document.createElement("li")
+         addLi.innerHTML = arrayNum[i]
+         addUl.appendChild(addLi)
+       }
+
+       //9 
+       for (let i = 0; i < 3; i +=1){
+         let addH3 = document.createElement("h3")
+         addH3.innerHTML = "Chama " + i
+         addMain.appendChild(addH3)
+       }
+
+       //10
+
+       let titleH1 = document.querySelector("h1")
+       titleH1.className = "title"
+
+       //11
+
+       let addH3s = document.getElementsByTagName("h3")
+       for (let i = 0; i < 3; i+=1){
+         addH3s[i].className = "Description"
+       }
+
+       //12 
+
+       let rSectionL = document.getElementsByClassName("left-content")[0]
+       addMain.removeChild(rSectionL)
+       //13
+      //  let centerSectionR = document.getElementsByClassName("rigth-content")[0]
+      //  centerSectionR.style.marginRight='auto'
+      //  //14
+      //  let centerSectionC = document.getElementsByClassName("center-content")[0]
+      // centerSectionR.parentNode.style.backgroundColor = "green"
+    </script>
+  </body>
+</html>
