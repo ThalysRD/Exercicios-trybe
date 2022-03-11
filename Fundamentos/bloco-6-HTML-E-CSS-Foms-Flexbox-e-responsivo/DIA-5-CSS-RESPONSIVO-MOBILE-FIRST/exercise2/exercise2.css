@@ -1,0 +1,55 @@
+html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+   
+  }
+
+  @media screen and (max-width: 600px) {
+      *{
+          margin: 2px;
+          
+      }
+      header{
+          display: flex;
+          flex-direction: column;
+          width: 60%;
+          
+          
+      }
+      header ul{margin-left: -20px;}
+      header p{
+        text-align: center;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+      }
+      .aside-one{
+          display: flex;
+          flex-direction: column;
+          width: 60%;
+      }
+      .aside-two{
+          display: flex;
+          flex-direction: column;
+          width: 60%;
+      }
+
+      article{
+          display: flex;
+          flex-direction: column;
+          width: 60%;
+      }
+      p{
+          width: 100%;
+          padding: 10px;
+      }
+
+      footer{
+          display: flex;
+          flex-direction: column;
+          width: 60%;
+      }
+  }
+
+  
