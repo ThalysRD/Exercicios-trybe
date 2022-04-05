@@ -1,0 +1,19 @@
+.Header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #d01212;
+  border-bottom: 1px solid #000000;
+  flex-direction: column;
+  font-size: 3rem;
+}
+
+.PokeContainer{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+body{
+  background-color: #000000;
+}
