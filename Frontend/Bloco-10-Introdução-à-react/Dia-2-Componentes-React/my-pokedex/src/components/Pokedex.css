@@ -12,10 +12,12 @@
     flex-direction: row;
     flex-wrap: wrap;
     margin: 2%;
+    border: 2.5px solid red;
 }
 
 div.poke{
     display: flex;
     flex-direction: column;
     padding-bottom: 10px;
+
 }
