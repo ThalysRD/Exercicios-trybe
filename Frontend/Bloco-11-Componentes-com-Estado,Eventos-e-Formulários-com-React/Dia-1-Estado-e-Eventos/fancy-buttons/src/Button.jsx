@@ -1,21 +1,29 @@
 import React, {Component} from "react";
 
-
-function click1 (){
-    console.log("1");
-}
-
-function click2 (){
-    console.log("2");
-}
-
-function click3 () {
-    console.log("3");
-}
-
 class Button extends Component {
+    constructor(){
+        super();
+        this.click1 = this.click1.bind(this);
+        this.click2 = this.click2.bind(this);
+        this.click3 = this.click3.bind(this);
+    }
+
+    click1 (){
+        console.log("1");
+        console.log(this);
+    }
+    
+     click2 (){
+        console.log("2");
+        console.log(this);
+    }
+    
+    click3 () {
+        console.log("3");
+        console.log(this);}
+
     render() {
-        return (<div><button onClick={click1}>1</button> <button onClick={click2}>2</button>  <button onClick={click3}>3</button> </div>)
+        return (<div><button onClick={this.click1}>1</button> <button onClick={this.click2}>2</button>  <button onClick={this.click3}>3</button> </div>)
     }
 }
 
