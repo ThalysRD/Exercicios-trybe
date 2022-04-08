@@ -3,41 +3,52 @@ import React, { Component } from 'react';
 class Forms extends Component {
   constructor() {
     super();
-    this.handleName = this.handleName.bind(this);
-    this.handleYear = this.handleYear.bind(this)
+    this.handleChange = this.handleChange.bind(this);
+   
     this.state = {
-      name: "",
-      year: "",
+      fullName: "",
+      yearsOld: "",
+      desejo: "",
+      motivosParaDormir: "",
+      dormindo: false,
+      files: ""
     };
   }
 
-  handleName(event) {
+  handleChange({target}) {
+      const {name} = target
+      const value = target.type === 'checkbox' ? target.checked : target.value 
       this.setState({
-          name: event.target.value
+          [name]: value
       })
   }
  
-  handleYear(event){
-    this.setState({
-        year: event.target.value 
-    })
-  }
-
+  
   render() {
     return (
       <div>
+           <fieldset>
         <label>
-          <input type="text" onInput={this.handleName} placeholder="Full Name" ></input>
+           
+          <input name ="fullName" type="text" onInput={this.handleChange} placeholder="Full Name" ></input>
         </label>
         <label>
-          <input type="number" onChange={this.handleYear} placeholder="Years old" ></input>
+          <input name="yearsOld"type="number" onChange={this.handleChange} placeholder="Years old" ></input>
         </label>
         <label>
-          <select></select>
+          <select name="desejo" onChange={this.handleChange} > <option>Dormir</option>
+          <option>Acordar</option></select>
         </label>
         <label>
-          <textarea></textarea>
+          <textarea name='motivosParaDormir' onChange={this.handleChange}></textarea>
         </label>
+        <label>
+            <input name="dormindo" type="checkbox" onChange={this.handleChange}></input>
+        </label>
+        <label>
+            <input name="files" type="file" onChange={this.handleChange} />
+        </label>
+        </fieldset>
       </div>
     );
   }
