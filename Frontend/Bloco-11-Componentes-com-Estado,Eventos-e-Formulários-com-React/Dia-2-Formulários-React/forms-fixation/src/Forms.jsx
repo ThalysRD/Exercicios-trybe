@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-
+import Name from './Name';
+import Years from './Years';
 class Forms extends Component {
   constructor() {
     super();
     this.handleChange = this.handleChange.bind(this);
+    
    
     this.state = {
       fullName: "",
@@ -11,7 +13,8 @@ class Forms extends Component {
       desejo: "",
       motivosParaDormir: "",
       dormindo: false,
-      files: ""
+      files: "",
+      error: true,
     };
   }
 
@@ -23,20 +26,31 @@ class Forms extends Component {
       })
   }
  
+  handleError() {
+    const { fullName, yearsOld } = this.state;
+
+    const errorCases = [
+      !fullName.length,
+      !yearsOld.length,
+      
+    ];
+  
+    const formCheck = errorCases.every((error) => error !== true)  
+
+    this.setState({
+      error: !formCheck
+    })
+  }
+
   
   render() {
     return (
       <div>
            <fieldset>
+        <Name handleChange={this.handleChange} value={this.state.fullName} />
+        <Years handleChange={this.handleChange} value={this.state.yearsOld} />
         <label>
-           
-          <input name ="fullName" type="text" onInput={this.handleChange} placeholder="Full Name" ></input>
-        </label>
-        <label>
-          <input name="yearsOld"type="number" onChange={this.handleChange} placeholder="Years old" ></input>
-        </label>
-        <label>
-          <select name="desejo" onChange={this.handleChange} > <option>Dormir</option>
+          <select name="desejo" onChange={this.handleChange}> <option>Dormir</option>
           <option>Acordar</option></select>
         </label>
         <label>
